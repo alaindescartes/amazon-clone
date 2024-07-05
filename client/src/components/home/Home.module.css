@@ -1,0 +1,30 @@
+/* Home.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.homeImage img {
+  width: 100%;
+  height: auto; /* Ensure the image covers the appropriate area, adjust as needed */
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+  gap: 1rem; /* Spacing between grid items */
+  width: 100%;
+  max-width: 1200px; /* Adjust based on your design requirements */
+  padding: 1rem;
+  margin-top: 1rem; /* Optional: adds space between the image and the product list */
+}
+
+.product {
+  display: flex; /* Ensures the contents of each product are nicely aligned */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
