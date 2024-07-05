@@ -8,6 +8,9 @@ const app = express();
 //connect to database
 connectDB();
 
+// Serve static files from the 'public' directory
+app.use(express.static("public"));
+
 app.get("/", (req, res) => res.send("Hello World!"));
 
 const PORT = process.env.PORT || 3000;
