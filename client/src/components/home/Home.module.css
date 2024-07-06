@@ -8,7 +8,7 @@
 }
 
 .homeImage img {
-  width: 100%;
+  width: 100vw;
   height: auto; /* Ensure the image covers the appropriate area, adjust as needed */
 }
 

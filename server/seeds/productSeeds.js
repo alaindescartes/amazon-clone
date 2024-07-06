@@ -1,9 +1,8 @@
-require("dotenv").config(); // Loads .env file content into process.env
+require("dotenv").config({ path: __dirname + "/../.env" }); // Loads .env file content into process.env
 const connectDB = require("../config/db");
 const Product = require("../schemas/product");
 const mongoose = require("mongoose");
 console.log("Database URL in connectDB:", process.env.DATABASE_URL);
-console.log(`Current directory: ${process.cwd()}`);
 
 //connect to database
 connectDB();

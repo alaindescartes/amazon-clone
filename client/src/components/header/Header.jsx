@@ -5,10 +5,15 @@ import {
   faShop,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import CartModal from "../portal/Modals/CartModal";
+import Portal from "../portal/Portal";
 import headerStyles from "./Header.module.css";
 
 function Header() {
+  const [open, setOpen] = useState(false);
+  const cartQuantity = useSelector((state) => state.cart.value);
   return (
     <header className={headerStyles.container}>
       <div className={headerStyles.brand}>
@@ -46,13 +51,18 @@ function Header() {
           Shop
         </a>
         <div className={headerStyles.cart}>
-          <button>
+          <button onClick={() => setOpen(!open)}>
             <FontAwesomeIcon
               icon={faCartShopping}
               className={headerStyles.cartLogo}
             />
-            <span>0</span>
+            <span>{cartQuantity}</span>
           </button>
+          {open && (
+            <Portal>
+              <CartModal open={open} onclose={() => setOpen(false)} />
+            </Portal>
+          )}
         </div>
       </nav>
     </header>

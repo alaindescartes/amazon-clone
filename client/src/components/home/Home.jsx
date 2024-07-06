@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "../product/Product";
 import homeStyles from "./Home.module.css";
 
 // Assuming you want to simulate 6 products as per your layout description
 const productList = new Array(6).fill(null);
-
 function Home() {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState();
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    try {
+      setIsLoading(true);
+
+      const getData = async () => {
+        try {
+          const response = await fetch("http://localhost:3000/products");
+          if (!response.ok) {
+            throw new error("Could not fetch data");
+          }
+          const products = await response.json();
+          setData(products);
+        } catch (err) {
+          setError(err);
+        } finally {
+          setIsLoading(false);
+        }
+      };
+      getData();
+    } catch (error) {}
+  }, []);
   return (
     <div className={homeStyles.container}>
       <div className={homeStyles.homeImage}>
@@ -15,8 +39,14 @@ function Home() {
         />
       </div>
       <div className={homeStyles.productList}>
-        {productList.map((_, index) => (
-          <Product key={index} />
+        {data.map((item, _index) => (
+          <Product
+            key={item._id}
+            name={item.name}
+            price={item.price}
+            url={item.imageUrl}
+            product={item}
+          />
         ))}
       </div>
     </div>
