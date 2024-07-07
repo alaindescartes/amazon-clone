@@ -32,11 +32,7 @@ function App() {
     return (
 
         <RouterProvider router={router}/>
-        // <div className="App">
-        //   <CartModal />
-        //   <Header />
-        //   <Home />
-        // </div>
+        
     );
 }
 
