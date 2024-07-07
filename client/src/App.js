@@ -29,15 +29,15 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
+    return (
 
-      <RouterProvider router={router}/>
-    // <div className="App">
-    //   <CartModal />
-    //   <Header />
-    //   <Home />
-    // </div>
-  );
+        <RouterProvider router={router}/>
+        // <div className="App">
+        //   <CartModal />
+        //   <Header />
+        //   <Home />
+        // </div>
+    );
 }
 
 export default App;
