@@ -1,0 +1,17 @@
+.container {
+    padding: 20px;
+    background-color: #ffdddd; /* Light red background */
+    border: 1px solid #dd0000; /* Red border */
+    color: #333; /* Dark text color for readability */
+    text-align: center; /* Center align text */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px; /* Margin for some spacing around */
+}
+
+h1 {
+    color: #d10000; /* Darker red for the heading */
+}
+
+p {
+    color: #555; /* Slightly lighter text color for the paragraph */
+}

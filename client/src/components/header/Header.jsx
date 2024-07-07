@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import CartModal from "../portal/Modals/CartModal";
 import Portal from "../portal/Portal";
 import headerStyles from "./Header.module.css";
+import {Link, NavLink} from "react-router-dom";
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -44,12 +45,14 @@ function Header() {
       </div>
 
       <nav className={headerStyles.nav}>
-        <a href="#signIn" className={headerStyles.navItem}>
+        <Link to="#signIn" className={headerStyles.navItem}>
           Sign In
-        </a>
-        <a href="#shop" className={headerStyles.navItem}>
+        </Link>
+        <NavLink to={"/products"}
+                 className={({isActive})=>
+                     (isActive ? headerStyles.active:headerStyles.navItem )}>
           Shop
-        </a>
+        </NavLink>
         <div className={headerStyles.cart}>
           <button onClick={() => setOpen(!open)}>
             <FontAwesomeIcon

@@ -164,3 +164,7 @@
   font-size: 20px; /* Smaller font size for the item count */
   font-weight: bold;
 }
+
+.active{
+  color: var(--secondary-color);
+}

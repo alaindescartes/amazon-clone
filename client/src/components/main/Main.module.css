@@ -1,0 +1,39 @@
+.container {
+    background-color: white; /* Deep blue background */
+    color: #FCA311; /* A vibrant yellow-orange for contrast */
+    text-align: center;
+    padding: 50px 20px; /* Adequate padding for visual space */
+    border-radius: 8px; /* Rounded corners for a smoother look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+
+.container h1 {
+    font-size: 2.5rem; /* Large font size for the headline */
+    margin-bottom: 20px; /* Space between the headline and subheadline */
+}
+
+.container p {
+    font-size: 1.5rem; /* Slightly larger paragraph font for emphasis */
+    color: black; /* Lighter shade for the subheadline text */
+}
+
+.cta {
+    font-size: 1.2rem;
+    background-color: #E63946; /* A bright red for the call to action button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.cta:hover {
+    background-color: #FCA311; /* Change color on hover for better interaction feedback */
+}

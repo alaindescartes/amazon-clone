@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "../product/Product";
 import homeStyles from "./Home.module.css";
+import {Outlet} from "react-router-dom";
 
 // Assuming you want to simulate 6 products as per your layout description
 const productList = new Array(6).fill(null);
@@ -49,6 +50,7 @@ function Home() {
           />
         ))}
       </div>
+      <Outlet/>
     </div>
   );
 }
